@@ -35,16 +35,16 @@
                                 <div class="row mt-2">
                                     <div class="col-12">
                                         <div class="form group">
-                                            <select name="tahun" id="tahun" class="form-select">
-                                                <option value="">Tahun</option>
-                                                @php
-                                                $tahunmulai = 2024;
-                                                $tahunskrng = date("Y");
-                                                @endphp
-                                                @for ($tahun=$tahunmulai; $tahun <= $tahunskrng; $tahun++) 
-                                                    <option value="{{ $tahun }}" {{ date("Y") == $tahun ? 'selected' : '' }}>{{ $tahun }}</option>
-                                                @endfor
-                                            </select>
+                                        <select name="tahun" id="tahun" class="form-control">
+                                            <option value="">Tahun</option>
+                                            @php
+                                            $tahunmulai = 2025;
+                                            $tahunakhir = date("Y") + 5; // Menambahkan 5 tahun ke depan
+                                            @endphp
+                                            @for ($tahun=$tahunmulai; $tahun <= $tahunakhir; $tahun++) 
+                                                <option value="{{ $tahun }}" {{ date("Y") == $tahun ? 'selected' : '' }}>{{ $tahun }}</option>
+                                            @endfor
+                                        </select>
                                         </div>
                                     </div>
                                 </div>
