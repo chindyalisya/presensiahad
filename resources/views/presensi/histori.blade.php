@@ -21,7 +21,7 @@
                     <select name="bulan" id="bulan" class="form-control">
                         <option value="">Bulan</option>
                         @for ($i=1; $i <= 12; $i++) 
-                            <option value="{{ $i }}" {{ date("m") == $i ? 'selected' : '' }}>{{ $namabulan [$i] }}</option>
+                            <option value="{{ $i }}" {{ date("m") == $i ? 'selected' : '' }}>{{ $namabulan[$i] }}</option>
                         @endfor
                     </select>
                 </div>
@@ -33,10 +33,10 @@
                     <select name="tahun" id="tahun" class="form-control">
                         <option value="">Tahun</option>
                         @php
-                        $tahunmulai = 2024;
-                        $tahunskrng = date("Y");
+                        $tahunmulai = 2025;
+                        $tahunakhir = date("Y") + 5; // Menambahkan 5 tahun ke depan
                         @endphp
-                        @for ($tahun=$tahunmulai; $tahun <= $tahunskrng; $tahun++) 
+                        @for ($tahun=$tahunmulai; $tahun <= $tahunakhir; $tahun++) 
                             <option value="{{ $tahun }}" {{ date("Y") == $tahun ? 'selected' : '' }}>{{ $tahun }}</option>
                         @endfor
                     </select>
